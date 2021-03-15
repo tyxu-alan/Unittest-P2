@@ -145,13 +145,12 @@ class TestCard(unittest.TestCase):
 
         '''
         d1 = hw5_cards.Deck()
-        l1 = len(d1.cards)
         c1 = d1.deal_card()
-        l2 = len(d1.cards)
+        l1 = len(d1.cards)
         d1.replace_card(c1)
-        l3 = len(d1.cards)
-        self.assertTrue(l3 > l2)
-        return l1, l2, l3
+        l2 = len(d1.cards)
+        self.assertEqual(l1+1, l2, 52)
+        return l1+1, l2, 52
     
     def test_q8(self):
         '''
@@ -167,13 +166,11 @@ class TestCard(unittest.TestCase):
 
         '''
         d1 = hw5_cards.Deck()
-        l1 = len(d1.cards)
         c1 = hw5_cards.Card(1,2)
-        l2 = len(d1.cards)
         d1.replace_card(c1)
-        l3 = len(d1.cards)
-        self.assertEqual(l1, l2, l3)
-        return l1, l2, l3
+        l1 = len(d1.cards)
+        self.assertEqual(l1, 52)
+        return l1, 52
 
 
 
