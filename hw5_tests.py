@@ -124,11 +124,10 @@ class TestCard(unittest.TestCase):
 
         '''
         d1 = hw5_cards.Deck()
-        l1 = len(d1.cards)
         d1.deal_card()
-        l2 = len(d1.cards)
-        self.assertTrue(l1 > l2)
-        return l1, l2
+        l1 = len(d1.cards)
+        self.assertEqual(l1, 51)
+        return l1, 51
     
 
     def test_q7(self):
